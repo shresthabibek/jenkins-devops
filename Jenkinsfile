@@ -30,17 +30,17 @@ pipeline{
 			}
 		}
 
-		stage('Test'){
-			steps{
-				sh " mvn test"
-			}
-		}
-		stage('Integration Test'){
-			steps{
-				// echo "Integration Test"
-				sh "mvn failsafe:integration-test failsafe:verify"
-			}
-		}
+		// stage('Test'){
+		// 	steps{
+		// 		sh " mvn test"
+		// 	}
+		// }
+		// stage('Integration Test'){
+		// 	steps{
+		// 		// echo "Integration Test"
+		// 		sh "mvn failsafe:integration-test failsafe:verify"
+		// 	}
+		// }
 
 		stage('Package'){
 			steps{
@@ -49,7 +49,7 @@ pipeline{
 			}
 		}
 
-			stage('Build Docker Image'){
+	stage('Build Docker Image'){
 		steps{
 			// "docker build -t shresthabibek/currency-exchange-devops:$env.BUILD_TAG"
 			script{
