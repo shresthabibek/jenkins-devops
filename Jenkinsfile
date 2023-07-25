@@ -48,9 +48,8 @@ pipeline{
 				sh "mvn package -Dskip"
 			}
 		}
-	}
 
-	stage('Build Docker Image'){
+			stage('Build Docker Image'){
 		steps{
 			// "docker build -t shresthabibek/currency-exchange-devops:$env.BUILD_TAG"
 			script{
@@ -69,6 +68,9 @@ pipeline{
 			}
 		}
 	}
+	}
+
+
 	
 	post{
 		always{
